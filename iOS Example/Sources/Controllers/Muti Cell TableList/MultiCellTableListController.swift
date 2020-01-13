@@ -9,7 +9,7 @@
 // Reference:
 // https://www.swiftbysundell.com/articles/reusable-data-sources-in-swift/
 // https://medium.com/ios-os-x-development/a-better-exhaustive-switch-in-uitableview-protocols-c770200c9ffa
-
+// https://medium.com/@aunnnn/table-header-view-with-autolayout-13de4cfc4343
 
 import UIKit
 import TableListKit
@@ -41,7 +41,34 @@ extension MultiCellTableListController {
     private func setupTableview() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.reloadData()
+        addTableViewHeader()
+    }
+    
+    // TODO: - Add to library
+    private func addTableViewHeader() {
+         // 1.
+         let containerView = UIView()
+         containerView.translatesAutoresizingMaskIntoConstraints = false
+        
+         // 2. headerView is your actual content.
+         let headerView = AppStoreHeaderView()
+         headerView.translatesAutoresizingMaskIntoConstraints = false
+         containerView.addSubview(headerView)
+         headerView.heightAnchor.constraint(equalToConstant: 300).isActive = true
+         headerView.widthAnchor.constraint(equalTo: containerView.widthAnchor).isActive = true
+         self.tableView.tableHeaderView = containerView
+         
+         // 3.
+         containerView.centerXAnchor.constraint(equalTo: self.tableView.centerXAnchor).isActive = true
+         containerView.widthAnchor.constraint(equalTo: self.tableView.widthAnchor).isActive = true
+         containerView.topAnchor.constraint(equalTo: self.tableView.topAnchor).isActive = true
+         containerView.heightAnchor.constraint(equalToConstant: 300).isActive = true
+         
+         // 4.
+         self.tableView.tableHeaderView?.layoutIfNeeded()
+         self.tableView.tableHeaderView = self.tableView.tableHeaderView
+         
+         tableView.reloadData()
     }
     
     override func tableView(_ tableView: UITableView,

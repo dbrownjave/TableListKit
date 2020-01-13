@@ -70,4 +70,13 @@ extension TableViewController {
         cell.textLabel?.text = "📦  \(date)"
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+         let row = indexPath.row
+         let section = indexPath.section
+        
+        let transaction = groupedTransactions[section][row]
+        let vc = DetailController(transaction: transaction)
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }

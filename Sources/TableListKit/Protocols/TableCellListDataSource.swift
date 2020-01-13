@@ -7,6 +7,6 @@
 
 import UIKit
 
-protocol TableCellListDataSource {
+public protocol TableCellListDataSource: class {
     func getCell(forRow row: Int) -> UITableViewCell
 }

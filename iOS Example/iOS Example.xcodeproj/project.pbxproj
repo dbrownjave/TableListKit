@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CCABA2DD23CB7E79000966E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCABA2C023CB7E79000966E9 /* ViewController.swift */; };
+		CC1523EB23CBF2CB000C9F5F /* AppStoreHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1523EA23CBF2CB000C9F5F /* AppStoreHeaderView.swift */; };
+		CCABA2DD23CB7E79000966E9 /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCABA2C023CB7E79000966E9 /* DetailController.swift */; };
 		CCABA2DE23CB7E79000966E9 /* TableListSectionMultiCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCABA2C223CB7E79000966E9 /* TableListSectionMultiCells.swift */; };
 		CCABA2DF23CB7E79000966E9 /* SwitchCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCABA2C423CB7E79000966E9 /* SwitchCellModel.swift */; };
 		CCABA2E023CB7E79000966E9 /* SwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CCABA2C523CB7E79000966E9 /* SwitchCell.xib */; };
@@ -24,11 +25,13 @@
 		CCABA2EB23CB7E79000966E9 /* Transaction+DataSource+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCABA2D823CB7E79000966E9 /* Transaction+DataSource+Model.swift */; };
 		CCABA2EC23CB7E79000966E9 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCABA2D923CB7E79000966E9 /* TableViewController.swift */; };
 		CCABA2EE23CB7E79000966E9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCABA2DC23CB7E79000966E9 /* SceneDelegate.swift */; };
-		D9A1278B2356A25E00D136A5 /* TableListKit in Frameworks */ = {isa = PBXBuildFile; productRef = D9A1278A2356A25E00D136A5 /* TableListKit */; };
+		CCABA2F023CB961D000966E9 /* TableListKit in Frameworks */ = {isa = PBXBuildFile; productRef = CCABA2EF23CB961D000966E9 /* TableListKit */; };
+		CCABA2F223CB9B06000966E9 /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCABA2F123CB9B06000966E9 /* TransactionCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CCABA2C023CB7E79000966E9 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CC1523EA23CBF2CB000C9F5F /* AppStoreHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreHeaderView.swift; sourceTree = "<group>"; };
+		CCABA2C023CB7E79000966E9 /* DetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
 		CCABA2C223CB7E79000966E9 /* TableListSectionMultiCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableListSectionMultiCells.swift; sourceTree = "<group>"; };
 		CCABA2C423CB7E79000966E9 /* SwitchCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchCellModel.swift; sourceTree = "<group>"; };
 		CCABA2C523CB7E79000966E9 /* SwitchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SwitchCell.xib; sourceTree = "<group>"; };
@@ -46,6 +49,7 @@
 		CCABA2D923CB7E79000966E9 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		CCABA2DB23CB7E79000966E9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CCABA2DC23CB7E79000966E9 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CCABA2F123CB9B06000966E9 /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
 		D9A12772235699C600D136A5 /* iOS Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -54,17 +58,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9A1278B2356A25E00D136A5 /* TableListKit in Frameworks */,
+				CCABA2F023CB961D000966E9 /* TableListKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CC1523E923CBEC32000C9F5F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CC1523EA23CBF2CB000C9F5F /* AppStoreHeaderView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		CCABA2BF23CB7E79000966E9 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				CCABA2C023CB7E79000966E9 /* ViewController.swift */,
+				CC1523E923CBEC32000C9F5F /* Views */,
 				CCABA2C123CB7E79000966E9 /* Cells */,
 				CCABA2C723CB7E79000966E9 /* TransactionModel.swift */,
 				CCABA2C823CB7E79000966E9 /* Assets.xcassets */,
@@ -83,8 +95,8 @@
 		CCABA2C123CB7E79000966E9 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				CCABA2C223CB7E79000966E9 /* TableListSectionMultiCells.swift */,
 				CCABA2C323CB7E79000966E9 /* Switch Cell */,
+				CCABA2F123CB9B06000966E9 /* TransactionCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -118,6 +130,7 @@
 		CCABA2D223CB7E79000966E9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CCABA2C023CB7E79000966E9 /* DetailController.swift */,
 				CCABA2D323CB7E79000966E9 /* Multi Section TableList */,
 				CCABA2D523CB7E79000966E9 /* Basic TableList */,
 				CCABA2DA23CB7E79000966E9 /* Muti Cell TableList */,
@@ -128,6 +141,7 @@
 		CCABA2D323CB7E79000966E9 /* Multi Section TableList */ = {
 			isa = PBXGroup;
 			children = (
+				CCABA2C223CB7E79000966E9 /* TableListSectionMultiCells.swift */,
 			);
 			path = "Multi Section TableList";
 			sourceTree = "<group>";
@@ -199,7 +213,7 @@
 			);
 			name = "iOS Example";
 			packageProductDependencies = (
-				D9A1278A2356A25E00D136A5 /* TableListKit */,
+				CCABA2EF23CB961D000966E9 /* TableListKit */,
 			);
 			productName = "iOS Example";
 			productReference = D9A12772235699C600D136A5 /* iOS Example.app */;
@@ -257,12 +271,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCABA2F223CB9B06000966E9 /* TransactionCell.swift in Sources */,
 				CCABA2E823CB7E79000966E9 /* AppDelegate.swift in Sources */,
 				CCABA2E223CB7E79000966E9 /* TransactionModel.swift in Sources */,
 				CCABA2DE23CB7E79000966E9 /* TableListSectionMultiCells.swift in Sources */,
 				CCABA2E723CB7E79000966E9 /* Date+Extensions.swift in Sources */,
+				CC1523EB23CBF2CB000C9F5F /* AppStoreHeaderView.swift in Sources */,
 				CCABA2E123CB7E79000966E9 /* SwitchCell.swift in Sources */,
-				CCABA2DD23CB7E79000966E9 /* ViewController.swift in Sources */,
+				CCABA2DD23CB7E79000966E9 /* DetailController.swift in Sources */,
 				CCABA2DF23CB7E79000966E9 /* SwitchCellModel.swift in Sources */,
 				CCABA2EC23CB7E79000966E9 /* TableViewController.swift in Sources */,
 				CCABA2EE23CB7E79000966E9 /* SceneDelegate.swift in Sources */,
@@ -471,7 +487,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D9A1278A2356A25E00D136A5 /* TableListKit */ = {
+		CCABA2EF23CB961D000966E9 /* TableListKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = TableListKit;
 		};

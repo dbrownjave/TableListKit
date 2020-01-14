@@ -11,6 +11,18 @@ import UIKit
 open class TableCell<Model>: UITableViewCell, ConfigurableCell {
     public var touched: (() -> ())?
     
+    public var primaryLabel: String? {
+        didSet {
+            textLabel?.text = primaryLabel
+        }
+    }
+    
+    public var secondaryLabel: String? {
+        didSet {
+            detailTextLabel?.text = secondaryLabel
+        }
+    }
+    
     public typealias DataType = Model
     
     func setupIU() {

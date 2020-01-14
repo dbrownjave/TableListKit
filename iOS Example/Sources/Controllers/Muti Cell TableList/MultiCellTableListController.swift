@@ -14,7 +14,7 @@
 import UIKit
 import TableListKit
 
-class MultiCellTableListController: UITableViewController {
+class MultiCellTableListController: TableListController {
     
     // transactions
     let today = Array(repeating: Transaction(date: Date()), count: 6)
@@ -39,44 +39,24 @@ class MultiCellTableListController: UITableViewController {
 
 extension MultiCellTableListController {
     private func setupTableview() {
-        tableView.delegate = self
-        tableView.dataSource = self
-        addTableViewHeader()
+        tableList.setup(delegate: self, dataSource: self)
+        tableList.reloadData()
+    }
+
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = AppStoreHeaderView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 300))
+        return headerView
     }
     
-    // TODO: - Add to library
-    private func addTableViewHeader() {
-         // 1.
-         let containerView = UIView()
-         containerView.translatesAutoresizingMaskIntoConstraints = false
-        
-         // 2. headerView is your actual content.
-         let headerView = AppStoreHeaderView()
-         headerView.translatesAutoresizingMaskIntoConstraints = false
-         containerView.addSubview(headerView)
-         headerView.heightAnchor.constraint(equalToConstant: 300).isActive = true
-         headerView.widthAnchor.constraint(equalTo: containerView.widthAnchor).isActive = true
-         self.tableView.tableHeaderView = containerView
-         
-         // 3.
-         containerView.centerXAnchor.constraint(equalTo: self.tableView.centerXAnchor).isActive = true
-         containerView.widthAnchor.constraint(equalTo: self.tableView.widthAnchor).isActive = true
-         containerView.topAnchor.constraint(equalTo: self.tableView.topAnchor).isActive = true
-         containerView.heightAnchor.constraint(equalToConstant: 300).isActive = true
-         
-         // 4.
-         self.tableView.tableHeaderView?.layoutIfNeeded()
-         self.tableView.tableHeaderView = self.tableView.tableHeaderView
-         
-         tableView.reloadData()
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 300
     }
     
     override func tableView(_ tableView: UITableView,
                             cellForRowAt indexPath: IndexPath
     ) -> UITableViewCell {
-        
         let row = indexPath.row
-        return getCell(forRow: row)
+        return tableListCell(forRow: row)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -86,9 +66,10 @@ extension MultiCellTableListController {
 
 
 // MARK: - Table Stacking Datasource
-extension MultiCellTableListController: TableCellListDataSource {
+extension MultiCellTableListController: TableListCellDataSource {
     
-    func getCell(forRow row: Int) -> UITableViewCell {
+    /// Returns a cell from the given row index location of the tablelist 
+    func tableListCell(forRow row: Int) -> UITableViewCell {
         switch row {
         case 0...3:
             let cell = tableView.stack(SwitchCell())

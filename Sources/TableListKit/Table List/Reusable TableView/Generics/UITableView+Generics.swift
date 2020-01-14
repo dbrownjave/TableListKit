@@ -12,8 +12,8 @@ import UIKit
 public extension UITableView {
     // MARK: - Setup
     func setup<T: UITableViewCell>(delegate: UITableViewDelegate?,
-                                          dataSource: UITableViewDataSource?,
-                                          cell: T.Type) {
+                                   dataSource: UITableViewDataSource?,
+                                   cell: T.Type) {
         register(cell)
         if let delegate = delegate, let dataSource = dataSource {
             self.delegate =  delegate
@@ -21,12 +21,19 @@ public extension UITableView {
         }
     }
     
-
+    func setup(delegate: UITableViewDelegate?, dataSource: UITableViewDataSource?) {
+        if let delegate = delegate, let dataSource = dataSource {
+            self.delegate =  delegate
+            self.dataSource = dataSource
+        }
+    }
+    
+    
     
     // MARK: - Register Cell
-//    func register<T: UITableViewCell>(_: T.Type) {
-//        register(T.self, forCellReuseIdentifier: T.reuseIdentifier)
-//    }
+    //    func register<T: UITableViewCell>(_: T.Type) {
+    //        register(T.self, forCellReuseIdentifier: T.reuseIdentifier)
+    //    }
     
     func register<T: UITableViewCell>(_: T.Type) {
         
@@ -61,5 +68,11 @@ public extension UITableView {
         self.register(nib, forCellReuseIdentifier: cellName)
         return self.dequeueReusableCell(withIdentifier: cellName) as! Cell
     }
+    
+}
+
+// MARK: - Header + Footer Views
+@available(iOS 9.0, *)
+public extension UITableView {
     
 }

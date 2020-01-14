@@ -10,7 +10,7 @@ import UIKit
 import TableListKit
 
 class SwitchCell: TableCell<SwitchCellModel> {
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none

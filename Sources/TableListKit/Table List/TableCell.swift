@@ -9,6 +9,8 @@
 import UIKit
 
 open class TableCell<Model>: UITableViewCell, ConfigurableCell {
+    open func configure(with model: Model) {}
+    
     public var touched: (() -> ())?
     
     public var primaryLabel: String? {
@@ -32,10 +34,6 @@ open class TableCell<Model>: UITableViewCell, ConfigurableCell {
     private func addGestureRecognizers() {
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTouchCell))
         contentView.addGestureRecognizer(tapGestureRecognizer)
-    }
-    
-    public func configure(with model: Model) {
-        
     }
     
     @objc func didTouchCell() {

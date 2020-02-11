@@ -16,4 +16,8 @@ class SwitchCell: TableCell<SwitchCellModel> {
         selectionStyle = .none
         backgroundColor = UIColor.secondarySystemBackground
     }
+    
+    override func configure(with model: SwitchCellModel) {
+        
+    }
 }

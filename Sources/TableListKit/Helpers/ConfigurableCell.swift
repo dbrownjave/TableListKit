@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol ConfigurableCell {
+protocol ConfigurableCell {
     associatedtype DataType
     
     var touched: (() -> ())? { get set}
